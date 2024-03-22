@@ -31,48 +31,77 @@
     <div class="row" style="justify-content: left;align-items: first baseline;">
         <div class="col-md-6 heading"><span>Hii, Welcome Here Enter Details and get detailed information!!</span></div>
         <div class="col-md-6 formContainer">
-            <form class="form">
+            <form class="form" action="{% url 'core:college' %}" method="post">
+                {% csrf_token %}
                 <p class="title">Fill Details</p>
-                <p class="message">Enter rank details!!</p>
+                <p class="message">Select your criteria</p>
                 <div class="flex">
                     <label>
-                        <select class="input" required="">
-                            <option value="" selected hidden>Choose Caste</option>
-                            <option value="general">General</option>
-                            <option value="obc">OBC</option>
-                            <option value="sc">SC</option>
-                            <option value="st">ST</option>
-                            <option value="other">Other</option>
+                        <select class="input" required name="institute">
+                            <option value="" disabled selected hidden>Choose Institute</option>
+                            {% for option in institute_options %}
+                                <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
                         </select>
                     </label>
-            
+                    
                     <label>
-                        <select class="input" required="" aria-placeholder="Choose Gender">
-                            <option value="" disabled selected hidden>Choose Gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
+                        <select class="input" required name="academic_program">
+                            <option value="" disabled selected hidden>Choose Academic Program</option>
+                            {% for option in academic_program_options %}
+                                <option value="{{ option }}">{{ option }}</option>
+                            {% endfor %}
                         </select>
                     </label>
                 </div>
-            
+                
                 <label>
-                    <input class="input" type="email" placeholder="" required="">
-                    <span>Enter Rank</span>
-                </label>
-            
-                <label>
-                    <select class="input" required="">
-                        <option value="" disabled selected hidden>Choose Branch</option>
-                        <option value="computer_science">Computer Science</option>
-                        <option value="electronics">Electronics</option>
-                        <option value="mechanical">Mechanical</option>
-                        <option value="civil">Civil</option>
+                    <select class="input" required name="quota">
+                        <option value="" disabled selected hidden>Choose Quota</option>
+                        {% for option in quota_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                        {% endfor %}
                     </select>
                 </label>
-                <button class="submit">Submit</button>
+                
+                <label>
+                    <select class="input" required name="seat_type">
+                        <option value="" disabled selected hidden>Choose Seat Type</option>
+                        {% for option in seat_type_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                        {% endfor %}
+                    </select>
+                </label>
+                
+                <label>
+                    <select class="input" required name="gender">
+                        <option value="" disabled selected hidden>Choose Gender</option>
+                        {% for option in gender_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                        {% endfor %}
+                    </select>
+                </label>
+                
+                
+                <label>
+                    <select class="input" required name="year">
+                        <option value="" disabled selected hidden>Choose Year</option>
+                        {% for option in year_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                        {% endfor %}
+                    </select>
+                </label>
+                
+                <label>
+                    <select class="input" required name="round">
+                        <option value="" disabled selected hidden>Choose Round</option>
+                        {% for option in round_options %}
+                            <option value="{{ option }}">{{ option }}</option>
+                        {% endfor %}
+                    </select>
+                </label>
+                <button class="submit" type="submit">Submit</button>
             </form>
-            
         </div>
     </div>
 </div>
