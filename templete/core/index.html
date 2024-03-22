@@ -1,0 +1,80 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img width="50px" src="../../static/assets/images/favicon.png"
+                alt=""><span>College Predict</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Analysis</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container-fluid landing">
+    <div class="row" style="justify-content: left;align-items: first baseline;">
+        <div class="col-md-6 heading"><span>Hii, Welcome Here Enter Details and get detailed information!!</span></div>
+        <div class="col-md-6 formContainer">
+            <form class="form">
+                <p class="title">Fill Details</p>
+                <p class="message">Enter rank details!!</p>
+                <div class="flex">
+                    <label>
+                        <select class="input" required="">
+                            <option value="" selected hidden>Choose Caste</option>
+                            <option value="general">General</option>
+                            <option value="obc">OBC</option>
+                            <option value="sc">SC</option>
+                            <option value="st">ST</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </label>
+            
+                    <label>
+                        <select class="input" required="" aria-placeholder="Choose Gender">
+                            <option value="" disabled selected hidden>Choose Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </label>
+                </div>
+            
+                <label>
+                    <input class="input" type="email" placeholder="" required="">
+                    <span>Enter Rank</span>
+                </label>
+            
+                <label>
+                    <select class="input" required="">
+                        <option value="" disabled selected hidden>Choose Branch</option>
+                        <option value="computer_science">Computer Science</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="mechanical">Mechanical</option>
+                        <option value="civil">Civil</option>
+                    </select>
+                </label>
+                <button class="submit">Submit</button>
+            </form>
+            
+        </div>
+    </div>
+</div>
+
+{% endblock %}

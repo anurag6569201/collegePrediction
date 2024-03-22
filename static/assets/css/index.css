@@ -1,0 +1,196 @@
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-brand span {
+    color: #82498c;
+    font-size: 1.6em;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.navbar-nav {
+    gap: 1.4em;
+}
+
+.nav-item .nav-link {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #ba68c8;
+}
+
+.nav-item .active {
+    color: #82498c;
+    font-weight: 600;
+}
+
+.landing {
+    background-image: url(../../assets/images/clgStudent.svg);
+    background-size: contain;
+    background-position: left center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3em;
+}
+
+.heading span {
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    border: 1px solid grey;
+    padding: .5em;
+    font-size: 1.2em;
+    border-radius: .4em;
+    color: #ba68c8;
+    font-weight: 500;
+}
+
+.formContainer{
+    display: flex;
+    justify-content: center;
+}
+/* form */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 450px;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    border: 1px solid grey;
+    margin: 20px;
+    border-radius: 20px;
+    position: relative;
+    padding: 20px;
+}
+
+.title {
+    font-size: 28px;
+    color: #ba68c8;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.title::before,
+.title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: #ba68c8;
+}
+
+.title::before {
+    width: 18px;
+    height: 18px;
+    background-color: #ba68c8;
+}
+
+.title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+}
+
+.message,
+.signin {
+    color: rgba(88, 87, 87, 0.822);
+    font-size: 14px;
+}
+
+.signin {
+    text-align: center;
+}
+
+.signin a {
+    color: #ba68c8;
+}
+
+.signin a:hover {
+    text-decoration: underline #ba68c8;
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+}
+
+.form label {
+    position: relative;
+}
+
+.form label .input {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+}
+
+.form label .input+span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown+span {
+    top: 15px;
+    font-size: 0.9em;
+}
+
+.form label .input:focus+span,
+.form label .input:valid+span {
+    top: 0px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+.form label .input:valid+span {
+    color: green;
+}
+
+.submit {
+    border: none;
+    outline: none;
+    background-color: #ba68c8;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+}
+
+.submit:hover {
+    background-color: #82498c;
+    cursor: pointer;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
